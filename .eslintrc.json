@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "plugins": ["react"],
+  "env": {
+      "browser": true,
+      "node": true
+  },
+  
+  "extends": ["eslint:recommended", "next", "next/core-web-vitals", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+
+    "camelcase": [
+      "warn",
+      {
+        "properties": "always"
+      }
+    ],
+
+    "prefer-const": "error",
+    "no-unused-expressions": "error",
+    "no-use-before-define": "error",
+    "no-labels": "error",
+    "eqeqeq": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "no-sequences": "error",
+    "yoda": "error",
+
+    "react/display-name": 0,
+
+    /* Outdated! now React namespace doesn't need to be in scope */
+    "react/react-in-jsx-scope": "off",
+
+    /* Outdated! now we don't have to specify propTypes */
+    "react/prop-types": "off"
+  }
+}
