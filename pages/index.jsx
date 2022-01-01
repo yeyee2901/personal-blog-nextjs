@@ -1,4 +1,4 @@
-import { Box, Text, Link, Image } from '@chakra-ui/react'
+import { Box, Text, Link, Image, useColorModeValue } from '@chakra-ui/react'
 import Head from 'next/head'
 import NextLink from 'next/link'
 
@@ -24,6 +24,8 @@ export async function getStaticProps() {
 }
 
 const Page = ({ postHeaders, postImages }) => {
+  const linkColor = useColorModeValue('blue.600', 'blue.300')
+
   return (
     <Box
       display='flex'
@@ -78,7 +80,7 @@ const Page = ({ postHeaders, postImages }) => {
               <Text as='p'>{postHeader.summary}</Text>
               <NextLink href={`/posts/${postHeader.id}`}>
                 <Link>
-                  <Text as='strong' fontSize='1em'>
+                  <Text as='strong' fontSize='1em' color={linkColor}>
                     Read more ...
                   </Text>
                 </Link>
