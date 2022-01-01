@@ -51,25 +51,38 @@ const Page = ({ postHeaders, postImages }) => {
                 </Link>
               </NextLink>
 
-              <Box display="flex" alignItems="center" justifyContent="space-around">
-              {postImages
-                .filter( (image) => image.postId.toString() === postHeader.id.toString())
-                .filter( (image) => image.imageName.includes("header") )
-                .map( (image) => {
-                  return (
-                    <Image
-                      key={image.imageName}
-                      alt='Profile'
-                      src={ `/images/${image.imageName}` }
-                      borderRadius='large'
-                      maxW="40%"
-                    />
+              <Box
+                display='flex'
+                alignItems='center'
+                justifyContent='space-around'
+              >
+                {postImages
+                  .filter(
+                    (image) =>
+                      image.postId.toString() === postHeader.id.toString()
                   )
-                })
-              }
+                  .filter((image) => image.imageName.includes('header'))
+                  .map((image) => {
+                    return (
+                      <Image
+                        key={image.imageName}
+                        alt='Profile'
+                        src={`/5103018003/UAS/images/${image.imageName}`}
+                        borderRadius='large'
+                        maxW='40%'
+                      />
+                    )
+                  })}
               </Box>
 
               <Text as='p'>{postHeader.summary}</Text>
+              <NextLink href={`/posts/${postHeader.id}`}>
+                <Link>
+                  <Text as='strong' fontSize='1em'>
+                    Read more ...
+                  </Text>
+                </Link>
+              </NextLink>
             </TextBox>
           )
         })}

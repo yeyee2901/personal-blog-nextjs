@@ -73,7 +73,7 @@ function Post({ posts, postHeaders, postImages, params }) {
                 <Image
                   key={image.imageName}
                   alt='Profile'
-                  src={ `/images/${image.imageName}` }
+                  src={ `/5103018003/UAS/images/${image.imageName}` }
                   borderRadius='large'
                   maxW="90%"
                 />
