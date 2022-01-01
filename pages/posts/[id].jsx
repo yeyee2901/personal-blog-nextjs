@@ -44,7 +44,8 @@ export async function getStaticProps({ params }) {
 
 function Post({ posts, postHeaders, postImages, params }) {
   const postHeader = postHeaders.filter((postHeader) => postHeader.id.toString() === params.id.toString())[0]
-  const postContent = posts.filter((post) => post.postId.toString() === params.id.toString())[0].content
+  const postContentRaw = posts.filter((post) => post.postId.toString() === params.id.toString())[0].content
+  const postContents = postContentRaw.split(/\r\n|\r|\n/g)
   const images = postImages.filter((postImage) => postImage.postId.toString() === params.id.toString())
 
   return(
@@ -81,8 +82,15 @@ function Post({ posts, postHeaders, postImages, params }) {
             })
           }
         </Box>
-
-        <Text as='p'>{postContent}</Text>
+    {postContents.map((line) => {
+      return(
+        <Text key={line} as='p'>
+          <Box mt={6}>
+            {line}
+          </Box>
+        </Text>
+      )
+    })}
 
       </TextBox>
     </Box>
