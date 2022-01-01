@@ -1,7 +1,3 @@
 module.exports = {
-  exportPathMap: function () {
-    return {
-      "/": { page: "/" },
-    }
-  },
+  basePath: '/5103018003/UAS'
 }
