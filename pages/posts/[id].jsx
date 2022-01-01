@@ -82,15 +82,16 @@ function Post({ posts, postHeaders, postImages, params }) {
             })
           }
         </Box>
-    {postContents.map((line) => {
-      return(
-        <Text key={line} as='p'>
-          <Box mt={6}>
-            {line}
-          </Box>
-        </Text>
-      )
-    })}
+
+        {postContents.map((line) => {
+          return(
+            <Text key={line} as='p'>
+              <Box mt={6}>
+                {line}
+              </Box>
+            </Text>
+          )
+        })}
 
       </TextBox>
     </Box>
